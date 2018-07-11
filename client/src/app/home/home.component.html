@@ -1,0 +1,16 @@
+<mat-card class="example-card" *ngFor="let product of products" @cardState>
+  <mat-card-header>
+    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+    <mat-card-title>{{ product.title }}</mat-card-title>
+    <mat-card-subtitle>{{ product.subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{ product.image }}" alt="Photo of {{ product.title }}" class="card-image" >
+  <mat-card-content>
+    <p>
+      {{ product.text }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions fxLayout="row"  fxLayoutAlign="center center">
+    <button mat-raised-button color="primary" >BUY: {{ product.price }} $</button>
+  </mat-card-actions>
+</mat-card>

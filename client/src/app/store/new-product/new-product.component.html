@@ -1,0 +1,30 @@
+<section class="new-product">
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="9px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <mat-form-field>
+      <input type="text" matInput placeholder="Product name" ngModel name="title"  required #titleInput="ngModel">
+      <mat-error *ngIf="titleInput.hasError('required')">Field must not be empty.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Select" required name="subtitle"  ngModel #categoryInput="ngModel">
+        <mat-option value="Povrce">Povrce</mat-option>
+        <mat-option value="Voce">Voce</mat-option>
+      </mat-select>
+      <mat-hint>Select a category.</mat-hint>
+      <mat-error *ngIf="categoryInput.hasError('required')">Field must not be empty.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+    <input type="number" matInput placeholder="Product price" ngModel name="price"  required #priceInput="ngModel">
+    <mat-error *ngIf="priceInput.hasError('required')">Field must not be empty.</mat-error>
+  </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Product image URL" ngModel name="image"  required #imageInput="ngModel">
+      <mat-error *ngIf="imageInput.hasError('required')">Field must not be empty.</mat-error>
+    </mat-form-field>
+    <mat-form-field> 
+        <textarea type="text" matInput placeholder="Product description" name="text"  required ngModel #descriptionInput="ngModel"></textarea>
+      <mat-error *ngIf="descriptionInput.hasError('required')">Field must not be empty.</mat-error>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid"
+            [@buttonState]="f.valid ? 'valid' : 'invalid'"><mat-icon>done</mat-icon></button>
+  </form>
+</section>

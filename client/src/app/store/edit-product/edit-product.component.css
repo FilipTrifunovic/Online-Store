@@ -1,0 +1,8 @@
+mat-table{
+    width: 1000px;
+}
+
+.tablerow:hover{
+ background-color: lightblue;
+}
+
